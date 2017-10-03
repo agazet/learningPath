@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Exercise 2</title>
+</head>
+<body>
+	<p>What is the input string?</p>
+	<input type="text" id="inputText">
+	<button onclick="countCharacters()">Submit</button>
+	<p id="number">Here will go the count of text characters ;)</p>
+
+</body>
+<script type="text/javascript">
+	function countCharacters() {
+		var inputText = document.getElementById("inputText").value;
+		document.getElementById("number").innerText = inputText + " has " + inputText.length + " characters.";
+	}
+</script>
+</html>
