@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Hello!</h1>
+	Hello! what's your name?
+	</br>
+	<input type="text" id="name">
+	<button onclick="getName()">Submit</button>
+	<h2 id="hello"></h2>
+</body>
+<script type="text/javascript">
+	function getName() {
+		var name = document.getElementById("name").value;
+		document.getElementById("hello").innerText = "Nice to meet you " + name
+				+ "!";
+	}
+
+	document.getElementById("name").addEventListener("keydown",
+			function(e) {
+				if (!e) {
+					var e = window.event;
+				}
+				// Enter is pressed
+				if (e.keyCode == 13) {
+					getName();
+				}
+			}, false);
+</script>
+</html>
