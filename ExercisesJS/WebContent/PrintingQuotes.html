@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Exercise 3</title>
+</head>
+<body>
+	<p>
+		What's the quote? <input type="text" id="quote">
+	</p>
+	<p>
+		Who said it? <input type="text" id="author">
+	</p>
+	<button onclick="printQuote()">Submit</button>
+	<p id="printQuote"></p>
+</body>
+<script type="text/javascript">
+	function printQuote() {
+		var quote = document.getElementById("quote").value;
+		var author = document.getElementById("author").value
+		document.getElementById("printQuote").innerText = author + " says, \""
+				+ quote + "\"";
+	}
+</script>
+</html>
