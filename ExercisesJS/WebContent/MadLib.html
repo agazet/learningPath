@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Exercise 4</title>
+<script src="lib/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<p>
+		Enter a noun: ​<input type="text" value="car" id="noun" />
+	</p>
+	<p>
+		Enter a verb: ​<input type="text" value="paint" id="verb" />
+	</p>
+	<p>
+		Enter an adjective: ​<input type="text" value="blue" id="adjective" />
+	</p>
+	<p>
+		Enter an adverb: <input type="text" value="daily" id="adverb" />
+	</p>
+	<button onclick="createMadLib()">Create</button>
+	<p id="madlib">No question yet</p>
+	<p id="buttons"></p>
+	<p id="answer">No answer yet</p>
+	<script>
+		function createMadLib() {
+			var noun = $('#noun').val();
+			const verb = $('#verb').val();
+			var adjective = $('#adjective').val();
+			var adverb = $('#adverb').val();
+
+			createQuestion(verb, adjective, noun, adverb);
+			createButtons();
+			createAnswer(verb, adjective, noun, adverb);
+					}
+		
+		function createQuestion(verb, adjective, noun, adverb){
+			$("#madlib").text(`Do you ${verb} your ${adjective} ${noun} ${adverb}?`);
+		}
+		
+		function createAnswer(verb, adjective, noun, adverb){
+			$("#yes").click(function(){
+				$("#answer").text(`That\'s hilarious! But you shouldn't ${verb} your ${adjective} ${noun} ${adverb}...`);
+			}
+					);
+			
+			$("#no").click(function(){
+				$("#answer").text(`Why? Try to ${verb} your ${adjective} ${noun} ${adverb}.`);
+			}
+					);
+		}
+		
+		function createButtons(){
+			$("#buttons").html("<button id=\"yes\">Yes</button> <button id=\"no\">No</button>");
+		}
+	</script>
+</body>
+</html>
