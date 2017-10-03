@@ -6,7 +6,7 @@
 </head>
 <body>
 	<p>What is the input string?</p>
-	<input type="text" id="inputText">
+	<input type="text" id="inputText" onkeyup="countCharacters()">
 	<button onclick="countCharacters()">Submit</button>
 	<p id="number">Here will go the count of text characters ;)</p>
 
@@ -14,7 +14,12 @@
 <script type="text/javascript">
 	function countCharacters() {
 		var inputText = document.getElementById("inputText").value;
-		document.getElementById("number").innerText = inputText + " has " + inputText.length + " characters.";
+		if (inputText === "") {
+			alert("Please enter a text!")
+		} else {
+			document.getElementById("number").innerText = inputText + " has "
+					+ inputText.length + " characters.";
+		}
 	}
 </script>
 </html>
